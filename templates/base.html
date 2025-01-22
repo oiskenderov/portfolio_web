@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} Portfolio</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script defer src="/static/js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <img src="{{ profile_pic }}" alt="Profile Picture" class="header-profile-pic">
+            <div class="header-info">
+                <h1>Orkhan Iskandarov Portfolio</h1>
+                <p>IT Manager | Project Team Leader | Pre-Sales Engineer | DevOps Expert</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#work-experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 {{ name }} | All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

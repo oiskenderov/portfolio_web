@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+</div>
+<div class="social-links">
+    <a href="{{ contact.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="{{ contact.github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    <a href="{{ contact.facebook }}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am an IT Manager/Supervisor with over 15 years of experience in managing teams and participating in various IT projects. 
+        My expertise includes Linux and Windows Administration, infrastructure architecture, database administration, monitoring systems, automations, and DevOps practices.
+        I excel in strategic planning, project management, and team leadership, delivering high-quality solutions in dynamic environments.
+    </p>
+    <p>
+        Leveraging my background in DevOps and system administration, I implement cutting-edge solutions to improve efficiency, scalability, and security.
+        As a leader, I am committed to motivating teams, fostering collaboration, and achieving organizational goals through agile methodologies.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+        {% for skill in skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="work-experience">
+    <h2>Work Experience</h2>
+    {% for job in work_experience %}
+    <div>
+        <h3>{{ job.role }} at {{ job.company }}</h3>
+        <p><strong>Dates:</strong> {{ job.dates }}</p>
+        <ul>
+            {% for responsibility in job.responsibilities %}
+            <li>{{ responsibility }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        {% for degree in education %}
+        <li>{{ degree.degree }} - {{ degree.institution }} ({{ degree.year }})</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Location:</strong> {{ contact.location }}</p>
+    <p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+    <p><strong>Phone:</strong> {{ contact.phone }}</p>
+    <p><strong>LinkedIn:</strong> <a href="{{ contact.linkedin }}" target="_blank">{{ contact.linkedin }}</a></p>
+    <p><strong>Github:</strong> <a href="{{ contact.github }}" target="_blank">{{ contact.github }}</a></p>
+    <p><strong>Facebook:</strong> <a href="{{ contact.facebook }}" target="_blank">{{ contact.facebook }}</a></p>
+</section>
+{% endblock %}

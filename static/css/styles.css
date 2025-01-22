@@ -1,0 +1,62 @@
+/* Header Styles */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+/* Profile Picture in Header */
+.header-profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+}
+
+/* Header Information */
+.header-info h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header-info p {
+    font-size: 1rem;
+    margin: 5px 0 0;
+    color: #f39c12;
+}
+
+/* Navigation Links */
+header nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+header nav a:hover {
+    color: #f39c12;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #f39c12;
+    border-radius: 5px;
+}
