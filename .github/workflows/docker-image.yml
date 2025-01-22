@@ -38,14 +38,3 @@ jobs:
       - name: Run Docker Compose
         run: |
           docker-compose up --build -d
-
-      ## Step 6: Run tests (optional)
-      #- name: Run Tests
-      #  run: |
-      #    docker-compose exec app
-
-      # Step 7: Shut down services
-      #- name: Tear Down
-      #  if: always()
-      #  run: |
-      #    docker-compose down
