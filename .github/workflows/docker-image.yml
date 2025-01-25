@@ -39,20 +39,31 @@ jobs:
         #env:
          # SSH_PRIVATE_KEY_PATH: /home/oiskenderov/Downloads/ubuntu-STD2-1-1-10GB-7JDuhLIk.pem
 
-      # Step 5: Build and run services using docker-compose 
-      - name: Deploy to Server
-        uses: fifsky/ssh-action@master
+      # Step 5: Build and run services using docker-compose
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          command: |
-            cd /tmp
-            ls -a
-            whoami
-            echo 'Deployment script runs here'
-            sudo systemctl start docker
-            sudo systemctl enable docker
-            git pull origin main
-            docker-compose down
-            docker-compose up --build -d
           host: ${{ secrets.SERVER_HOST }}
-          user: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: whoami
+
+
+      
+      #- name: Deploy to Server
+      #  uses: fifsky/ssh-action@master
+      #  with:
+      #    command: |
+      #      cd /tmp
+      #      ls -a
+      #      whoami
+      #      echo 'Deployment script runs here'
+      #      sudo systemctl start docker
+      #      sudo systemctl enable docker
+      #      git pull origin main
+      #      docker-compose down
+      #      docker-compose up --build -d
+      #    host: ${{ secrets.SERVER_HOST }}
+      #    user: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}
+      #    key: ${{ secrets.SSH_PRIVATE_KEY }}
