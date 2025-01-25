@@ -4,7 +4,8 @@ services:
     build: .
     container_name: fastapi-portfolio
     ports:
-      - "8000:8000"
+      - "8000:8000" # Application internal access
     environment:
       - ENV=production
     restart: always
+
