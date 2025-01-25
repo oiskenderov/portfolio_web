@@ -34,23 +34,26 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      #- name: Test SSH connection
-      #  run: ssh -vvv -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} echo "SSH Connection Successful"
-        #env:
-         # SSH_PRIVATE_KEY_PATH: /home/oiskenderov/Downloads/ubuntu-STD2-1-1-10GB-7JDuhLIk.pem
-
       # Step 5: Build and run services using docker-compose
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@v1.2.0
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: whoami
+          username: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          script: |
+              sudo apt-get update
+              sudo apt-get install -y docker-compose docker
+              sudo systemctl start docker
+              sudo systemctl enable docker
+              git pull origin main
+              docker-compose down
+              docker-compose up --build -d
+           #  sudo apt-get install python3-pip -y
+           #  sudo pip3 install docker-compose
+              
 
 
-      
       #- name: Deploy to Server
       #  uses: fifsky/ssh-action@master
       #  with:
