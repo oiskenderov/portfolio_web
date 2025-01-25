@@ -41,14 +41,8 @@ jobs:
             host: ${{ secrets.SERVER_HOST }}
             username: ${{ secrets.SERVER_USER }}
             key: ${{ secrets.SSH_PRIVATE_KEY }}
+            
             script: |
-              cd /.
-              sudo apt-get update
-              sudo apt-get install -y docker-compose docker
-              sudo systemctl start docker
-              sudo systemctl enable docker
-              sudo apt-get install python3-pip -y
-              sudo pip3 install docker-compose
               git pull
               docker-compose up --build -d
         
