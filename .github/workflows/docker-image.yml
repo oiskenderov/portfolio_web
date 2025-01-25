@@ -55,4 +55,4 @@ jobs:
             docker-compose up --build -d
           host: ${{ secrets.SERVER_HOST }}
           user: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}
-          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
