@@ -42,8 +42,8 @@ jobs:
               sudo systemctl enable docker
 
               # Set up SSH for GitHub on the remote machine
-              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git
-              chmod 600 ~/.ssh/git
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git2
+              chmod 600 ~/.ssh/git2
 
               # Add GitHub's SSH host key to known_hosts to prevent host verification issues
               ssh-keyscan github.com >> ~/.ssh/known_hosts
