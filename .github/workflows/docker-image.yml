@@ -42,8 +42,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           script: |
-              sudo apt-get update
-              sudo apt-get install -y docker-compose docker
+              sudo apt update
+              sudo apt install -y docker-compose
+              sudo apt install -y docker.io
               sudo systemctl start docker
               sudo systemctl enable docker
               git pull origin main
