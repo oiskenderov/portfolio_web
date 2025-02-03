@@ -37,12 +37,29 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           script: |
               sudo apt update
-              sudo apt install -y docker-compose
-              sudo apt install -y docker.io
+              sudo apt install -y docker-compose docker.io
               sudo systemctl start docker
               sudo systemctl enable docker
-              git clone git@github.com:oiskenderov/portfolio_web.git
-              git pull origin main
+
+              # Set up SSH for GitHub on the remote machine
+              mkdir -p ~/.ssh
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git
+              chmod 600 ~/.ssh/git
+
+              # Add GitHub's SSH host key to known_hosts to prevent host verification issues
+              ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+              # Clone or update the repository
+              if [ ! -d "portfolio_web/.git" ]; then
+                git clone git@github.com:oiskenderov/portfolio_web.git
+              else
+                cd portfolio_web
+                git pull origin main
+              fi
+
+              # Build and run the services
+              cd portfolio_web
               docker-compose down
               docker-compose up --build -d
-              
+
+            
