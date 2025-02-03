@@ -36,19 +36,17 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           script: |
-              sudo apt update
-              sudo apt install -y docker-compose docker.io
-              sudo systemctl start docker
-              sudo systemctl enable docker
+              # Create SSH directory if not exists
+              mkdir -p ~/.ssh
+              
+              # Add private key from GitHub Secrets and set permissions
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+              chmod 600 ~/.ssh/id_rsa
 
-              # Set up SSH for GitHub on the remote machine
-              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git2
-              chmod 600 ~/.ssh/git2
-
-              # Add GitHub's SSH host key to known_hosts to prevent host verification issues
+              # Add GitHub to known_hosts to avoid verification errors
               ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-              # Test SSH
+              # Verify SSH connection (will fail if not configured correctly)
               ssh -T git@github.com
 
               # Clone or pull the repository
@@ -59,6 +57,7 @@ jobs:
                 git pull origin main || exit 1
               fi
 
+              # Docker commands
               cd portfolio_web
               docker-compose down || exit 1
               docker-compose up --build -d || exit 1
