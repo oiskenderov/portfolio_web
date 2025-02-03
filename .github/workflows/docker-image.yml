@@ -42,7 +42,6 @@ jobs:
               sudo systemctl enable docker
 
               # Set up SSH for GitHub on the remote machine
-              mkdir -p ~/.ssh
               echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git
               chmod 600 ~/.ssh/git
 
@@ -54,6 +53,7 @@ jobs:
                 git clone git@github.com:oiskenderov/portfolio_web.git
               else
                 cd portfolio_web
+                git init
                 git pull origin main
               fi
 
