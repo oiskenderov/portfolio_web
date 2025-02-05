@@ -40,12 +40,14 @@ jobs:
               mkdir -p ~/.ssh
               
               # Add private key from GitHub Secrets and set permissions
-              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/git
-              chmod 600 ~/.ssh/git
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+              chmod 600 ~/.ssh/id_rsa
+              ls -al ~/.ssh/
 
               # Add GitHub to known_hosts to avoid verification errors
               ssh-keyscan github.com >> ~/.ssh/known_hosts
-
+              cat ~/.ssh/known_hosts | grep id_rsa
+              
               # Verify SSH connection (will fail if not configured correctly)
               ssh -T git@github.com
 
