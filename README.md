@@ -4,7 +4,11 @@
 
 
 ## Overview
-This repository contains the code for my personal portfolio website, developed using FastAPI for the backend and HTML, CSS, and JavaScript for the frontend. The application is containerized using Docker and orchestrated with Docker Compose. Continuous Integration and Continuous Deployment (CI/CD) processes are implemented to ensure seamless updates and deployment to a remote machine hosted on a Any Provider instance.
+This repository contains the code for my personal portfolio website, 
+developed using FastAPI for the backend and HTML, CSS, and JavaScript for the frontend. 
+The application is containerized using Docker and orchestrated with Docker Compose. 
+Continuous Integration and Continuous Deployment (CI/CD) processes are implemented 
+to ensure seamless updates and deployment to a remote machine hosted on a Any Provider instance.
 
 ## Technologies Used
 - **Backend**: FastAPI (Python)
