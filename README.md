@@ -90,6 +90,23 @@ Contributions to the project are welcome! Please fork the repository and submit 
 ## License
 Personal using.
 
+## About This Project
+
+Welcome to my portfolio project, a showcase of my skills in DevOps, system engineering, and cybersecurity. This repository contains a web application designed to demonstrate how modern technologies like FastAPI, Docker, and continuous integration/deployment practices can be integrated to build and deploy robust applications.
+
+### Purpose
+The primary goal of this project is to provide a practical example of setting up a full-stack application using FastAPI for the backend, with a simple yet elegant frontend designed with HTML, CSS, and JavaScript. It emphasizes the use of containerization through Docker and orchestration with Docker Compose, demonstrating best practices in software development and deployment.
+
+### Features
+- **FastAPI Backend**: Leverages FastAPI's capabilities for rapid API development with automatic interactive API documentation.
+- **HTML/CSS/JavaScript Frontend**: Utilizes basic frontend technologies to create a responsive and interactive user experience.
+- **Docker and Docker Compose**: Containerizes the application, ensuring consistency across different environments and simplifying deployment processes.
+- **CI/CD Integration**: Implements Continuous Integration and Continuous Deployment using industry-standard tools to automate the testing and deployment lifecycle.
+- **Remote Instance Deployment**: Shows the deployment process on a remote Digital Ocean instance, illustrating cloud hosting and remote server management.
+
+### Target Audience
+This project is intended for IT professionals, developers, and technical enthusiasts who are interested in learning about and implementing DevOps practices, containerization, and cloud deployments. It also serves as a resource for anyone looking to understand how to architect and deploy applications using cutting-edge technologies in a real-world scenario.
+
 ## Contact
 For any further queries, you can reach out to me via:
 
@@ -97,8 +114,11 @@ For any further queries, you can reach out to me via:
 **Role**: DevOps Engineer, System Engineer, Certified Cyber-Security Engineer, IT Manager/SEO  
 **About**: I created this small project to demonstrate how easily any IT staff or technical person can deploy their own project.  
 **Email**: [oiskenderov@gmail.com](mailto:oiskenderov@gmail.com)
+**GitHub**: [Link to Repository](https://github.com/oiskenderov/portfolio_web)
+
 
 Feel free to explore and provide feedback!
 
+Thank you for visiting this repository! I hope it serves as a valuable learning tool and inspires you to create and deploy your own projects. Feel free to fork, star, and contribute to the improvement of this application.
 
 This README provides a detailed guide to your project, making it easy for others to understand how to set it up, contribute, and deploy. Adjust the placeholders (like CI/CD tools, your GitHub username, and repository URL) to match your specific project details.
