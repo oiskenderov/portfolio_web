@@ -1,7 +1,7 @@
-Here's the complete `README.md` text updated with all the necessary details for your GitHub repository:
+## Personal FastAPI Portfolio
 
 ```markdown
-# FastAPI Portfolio
+
 
 ## Overview
 This repository contains the code for my personal portfolio website, developed using FastAPI for the backend and HTML, CSS, and JavaScript for the frontend. The application is containerized using Docker and orchestrated with Docker Compose. Continuous Integration and Continuous Deployment (CI/CD) processes are implemented to ensure seamless updates and deployment to a remote machine hosted on a Any Provider instance.
@@ -88,7 +88,7 @@ This project utilizes [CI/CD tool name] for continuous integration and deploymen
 Contributions to the project are welcome! Please fork the repository and submit a pull request with your updates.
 
 ## License
-[Specify the license or state that the project is unlicensed.]
+Personal using.
 
 ## Contact
 For any further queries, you can reach out to me via:
