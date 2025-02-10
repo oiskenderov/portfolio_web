@@ -172,3 +172,8 @@ cython_debug/
 
 #Droplet SH
 droplet.sh
+
+
+docker-image.yml
+.github
+.github/*
